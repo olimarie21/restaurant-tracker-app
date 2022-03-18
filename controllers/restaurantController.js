@@ -1,5 +1,7 @@
+// create middleware for routes
 const Restaurant = require('../models/restaurant');
 
+// post restaurant middleware
 const postRestaurant = (req, res) => {
     let restaurant = new Restaurant(req.body);
 
@@ -10,6 +12,7 @@ const postRestaurant = (req, res) => {
     .catch(error=>res.status(500).send(error));
 }
 
+// get all restaurants middleware
 const getRestaurants = (req, res) => {
     Restaurant.find({}).exec()
     .then(allRestaurants => {
@@ -18,6 +21,7 @@ const getRestaurants = (req, res) => {
     .catch(error=>res.status(500).send(error));
 }
 
+// export middleware
 module.exports = {
     postRestaurant,
     getRestaurants

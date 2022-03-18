@@ -3,3 +3,4 @@
 2022-03-12 23:41:05 [INFO]: OS:  Linux x64 4.14.262-200.489.amzn2.x86_64
 2022-03-12 23:41:05 [INFO]: AWS Cloud9 Extension Host Version:  1.44.2
 2022-03-12 23:41:05 [INFO]: AWS Toolkit Version:  1.36.0-79a3f75acd48
+2022-03-12 23:46:05 [INFO]: telemetry: (test mode) dropped batch (size=3)
