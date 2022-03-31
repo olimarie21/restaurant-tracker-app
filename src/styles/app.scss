@@ -1,0 +1,112 @@
+@import '_variables.scss';
+
+body {
+    font-family: $font;
+    margin: 0px;
+    color: $dark-grey;
+}
+
+// ********************************************** //
+// App ****************************************** //
+// ********************************************** //
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h4 {
+        text-align: center;
+        margin: 24px 36px;
+        font: $h4;
+    }
+
+    button, .greyBlock {
+        width: 90%;
+        height: 60px;
+        box-shadow: $shadow;
+        border-radius: 18px;
+        border: none;
+        background-color: $grey;
+        font: $h2;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .savedRestaurants {
+        width: 90%;
+        
+        .searchInput {
+            display: flex;
+            max-width: 100%;
+            margin: auto;
+            gap: 4px;
+    
+            input {
+                width: 90%;
+                height: 32px;
+                border-radius: 18px;
+                border: none;
+                background-color: $secondary-green;
+                box-shadow: $shadow;
+                padding: 0 12px;
+                font: $small-body;
+            }
+    
+            .filterBtn {
+                width: 32px;
+                height: 32px;
+                background-color: $primary-green;
+                border-radius: 100px;
+                margin-bottom: 0;
+        
+                svg {
+                    object-position: center;
+                    object-fit: contain;
+                    height: 30px;
+                }
+            }
+        }
+    }
+
+    .header {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        clip-path: ellipse(76% 50% at 53% 32%);
+        position: relative;
+        width: 100%;
+        grid-row: 1 / -1;
+        grid-column: 1 / -1;
+        min-height: 100px;
+        object-fit: cover;
+        max-height: 100%;
+        background-color: $primary-green;
+        
+        // div {
+        // }
+    
+        h1 {
+            font: $h1;
+            position: absolute;
+            text-transform: lowercase;
+            color: white;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            grid-row: 1 / -1;
+            grid-column: 1 / -1;
+            z-index: 3;
+            text-shadow: $text-shadow;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+
+    }
+
+    // h4 {
+    //     font: $h4;
+    //     margin: 0 42px;
+    // }
+}
+

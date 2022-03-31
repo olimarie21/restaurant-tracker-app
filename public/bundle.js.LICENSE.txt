@@ -4,19 +4,29 @@ object-assign
 @license MIT
 */
 
-/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./app.scss */
+/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./app.scss */
 
-/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./filter.scss */
 
-/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */
+/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./restaurantCard.scss */
 
-/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./restaurantForm.scss */
 
-/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
-/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */
 
-/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */
+
+/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */
+
+/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */
+
+/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */
+
+/*! ../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */
 
 /*! ../adapters/xhr */
 
@@ -46,10 +56,6 @@ object-assign
 
 /*! ../helpers/validator */
 
-/*! ../node_modules/css-loader/dist/runtime/api.js */
-
-/*! ../node_modules/css-loader/dist/runtime/sourceMaps.js */
-
 /*! ../utils */
 
 /*! ./../core/settle */
@@ -68,13 +74,13 @@ object-assign
 
 /*! ./Cancel */
 
+/*! ./Filter */
+
 /*! ./InterceptorManager */
 
 /*! ./RestaurantCard */
 
 /*! ./RestaurantForm */
-
-/*! ./app.scss */
 
 /*! ./cancel/Cancel */
 
@@ -104,6 +110,18 @@ object-assign
 
 /*! ./env/data */
 
+/*! ./graphics/add.svg */
+
+/*! ./graphics/filterIcon.svg */
+
+/*! ./graphics/happyHour.svg */
+
+/*! ./graphics/headerRestaurant.svg */
+
+/*! ./graphics/location.svg */
+
+/*! ./graphics/pointer.svg */
+
 /*! ./helpers/bind */
 
 /*! ./helpers/isAxiosError */
@@ -113,6 +131,14 @@ object-assign
 /*! ./lib/axios */
 
 /*! ./mergeConfig */
+
+/*! ./styles/app.scss */
+
+/*! ./styles/filter.scss */
+
+/*! ./styles/restaurantCard.scss */
+
+/*! ./styles/restaurantForm.scss */
 
 /*! ./transformData */
 
@@ -137,12 +163,20 @@ object-assign
   \********************/
 
 /*!**********************!*\
-  !*** ./src/app.scss ***!
-  \**********************/
-
-/*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
+
+/*!***********************!*\
+  !*** ./src/Filter.js ***!
+  \***********************/
+
+/*!*****************************!*\
+  !*** ./src/styles/app.scss ***!
+  \*****************************/
+
+/*!******************************!*\
+  !*** ./src/graphics/add.svg ***!
+  \******************************/
 
 /*!*******************************!*\
   !*** ./src/RestaurantCard.js ***!
@@ -152,6 +186,22 @@ object-assign
   !*** ./src/RestaurantForm.js ***!
   \*******************************/
 
+/*!********************************!*\
+  !*** ./src/styles/filter.scss ***!
+  \********************************/
+
+/*!**********************************!*\
+  !*** ./src/graphics/pointer.svg ***!
+  \**********************************/
+
+/*!***********************************!*\
+  !*** ./src/graphics/location.svg ***!
+  \***********************************/
+
+/*!************************************!*\
+  !*** ./src/graphics/happyHour.svg ***!
+  \************************************/
+
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
   \*************************************/
@@ -159,6 +209,18 @@ object-assign
 /*!*************************************!*\
   !*** ./node_modules/react/index.js ***!
   \*************************************/
+
+/*!*************************************!*\
+  !*** ./src/graphics/filterIcon.svg ***!
+  \*************************************/
+
+/*!****************************************!*\
+  !*** ./src/styles/restaurantCard.scss ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/styles/restaurantForm.scss ***!
+  \****************************************/
 
 /*!*****************************************!*\
   !*** ./node_modules/axios/lib/axios.js ***!
@@ -178,6 +240,10 @@ object-assign
 
 /*!*******************************************!*\
   !*** ./node_modules/scheduler/tracing.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/graphics/headerRestaurant.svg ***!
   \*******************************************/
 
 /*!********************************************!*\
@@ -340,9 +406,21 @@ object-assign
   !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
   \**********************************************************************************/
 
-/*!***************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app.scss ***!
-  \***************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/app.scss ***!
+  \**********************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/filter.scss ***!
+  \*************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/restaurantCard.scss ***!
+  \*********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/restaurantForm.scss ***!
+  \*********************************************************************************************************************/
 
 /**
  * Checks if an event is supported in the current execution environment.

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 // Configure restaurant schema
 const RestaurantSchema = new Schema({
-    name:{type:String, required:true},
+    restaurant:{type:String, required:true},
     website:{type:String, required:true},
     address:{type:String, required:true},
     type:{
@@ -15,7 +15,6 @@ const RestaurantSchema = new Schema({
     dateAdded:{type:Date, default: Date.now},
     visited:{type:Boolean, required: true, default:false},
     happyHour:{type:Boolean, required:true, default:false},
-    comments:{type:String}
 });
 
 const Restaurant = mongoose.model("Restaurant", RestaurantSchema);

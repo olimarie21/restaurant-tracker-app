@@ -1,0 +1,32 @@
+@import '_variables.scss';
+
+.filterPopUp {
+    display: flex;
+    padding: 24px;
+    box-shadow: $shadow;
+    border-radius: 18px;
+    gap: 10%;
+    
+
+    fieldset {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        legend {
+            font: $h3;
+            padding-bottom: 12px;
+        }
+
+        .category {
+
+            label {
+                display: flex;
+                gap: 8px;
+                font: $small-body;
+                align-items: center;
+            }
+        }
+    }
+}

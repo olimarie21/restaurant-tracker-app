@@ -17,8 +17,19 @@ module.exports = {
         rules: [
             {
                 test: /\.(s(a|c)ss)$/,
-                use: ['style-loader','css-loader', 'sass-loader']
+                use: ['style-loader','css-loader', {
+                    loader: 'sass-loader',
+                  },
+                ]
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
+              },
             {
                 test: /\.m?js$/,
                 use: {
