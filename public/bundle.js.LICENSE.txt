@@ -112,6 +112,8 @@ object-assign
 
 /*! ./graphics/add.svg */
 
+/*! ./graphics/deleteBtn.svg */
+
 /*! ./graphics/filterIcon.svg */
 
 /*! ./graphics/happyHour.svg */
@@ -120,7 +122,7 @@ object-assign
 
 /*! ./graphics/location.svg */
 
-/*! ./graphics/pointer.svg */
+/*! ./graphics/search.svg */
 
 /*! ./helpers/bind */
 
@@ -190,13 +192,17 @@ object-assign
   !*** ./src/styles/filter.scss ***!
   \********************************/
 
-/*!**********************************!*\
-  !*** ./src/graphics/pointer.svg ***!
-  \**********************************/
+/*!*********************************!*\
+  !*** ./src/graphics/search.svg ***!
+  \*********************************/
 
 /*!***********************************!*\
   !*** ./src/graphics/location.svg ***!
   \***********************************/
+
+/*!************************************!*\
+  !*** ./src/graphics/deleteBtn.svg ***!
+  \************************************/
 
 /*!************************************!*\
   !*** ./src/graphics/happyHour.svg ***!
