@@ -1,9 +1,12 @@
 const router = require('express').Router({mergeParams:true});
 
 // Import middleware for restaurant routes
-const {getRestaurants, postRestaurant} = require('../controllers/restaurantController');
+const {getRestaurants, postRestaurant, search, getSingleRestaurant} = require('../controllers/restaurantController');
+const {ajvValidator} = require('../controllers/restaurantAJV');
 
-router.get('/', getRestaurants); // get all restaurants
-router.post('/', postRestaurant); // post new restaurant
+router.get('/restaurants', getRestaurants); // get all restaurants
+router.post('/restaurants', postRestaurant, ajvValidator); // post new restaurant
+router.get('/search', search);
+router.get('/restaurants/:id', getSingleRestaurant);
 
 module.exports = router;
