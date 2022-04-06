@@ -1,18 +1,66 @@
 @import '_variables.scss';
 
+.background {
+    background: white;
+    opacity: 0.7;
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
 .filterPopUp {
-    display: flex;
+    display: grid;
     padding: 24px;
     box-shadow: $shadow;
     border-radius: 18px;
-    gap: 10%;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    width: auto;
+    align-self: center;
+    position: fixed;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
+    fieldset {
+        grid-column: 2 / 2;
+    }
+
+    fieldset:first-of-type {
+        grid-column: 1 / 2;
+    }
+
+    .filterButtons {
+        grid-row: 2 / 2;
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 6%;
+        align-items: center;
+        justify-content: space-around;
+        margin: 12px 0 0 0;
+
+        button {
+            height: 32px;
+            width: 45%;
+            padding: 8px;
+            font: $small-body;
+            background-color: $primary-green;
+            color: white;
+            margin-bottom: 0;
+            text-shadow: $text-shadow;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+    }
 
     fieldset {
         border: none;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
         
         legend {
             font: $h3;
@@ -20,7 +68,6 @@
         }
 
         .category {
-
             label {
                 display: flex;
                 gap: 8px;
