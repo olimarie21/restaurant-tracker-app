@@ -129,7 +129,7 @@ export default function App() {
                 <h4>Browse, categorize and save restaurants to simplify your future dining decisions.</h4>
                 <button className='greyBlock addRestaurantBtn' onClick={e => toggleForm(e)}>add restaurant<img src={add}/></button>
                 {addRestaurant ? (
-                    <RestaurantForm categories={categories} getRestaurants={getRestaurants}/>
+                    <RestaurantForm categories={categories} getRestaurants={getRestaurants} showForm={setAddRestaurant}/>
                 ) : null}
                 
                 <div className='greyBlock'><h2>saved restaurants</h2></div>

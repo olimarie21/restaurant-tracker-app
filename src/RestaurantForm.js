@@ -34,6 +34,13 @@ export default function RestaurantForm(props) {
         .then(res => {
             console.log(res);
             setEmptyForm(true);
+            setError({
+                restaurantErr: null,
+                websiteErr: null,
+                addressErr: null,
+                typeErr: null
+            });
+            props.showForm(false);
         })
         .catch(error => {
             if(error.response.data.errors) {
@@ -50,12 +57,14 @@ export default function RestaurantForm(props) {
             props.getRestaurants(); // update listing
             
             // clear form
+            if(emptyForm === true) {
                 setName('');
                 setWebsite('');
                 setAddress('');
                 setCategory('');
                 setHappyHour(false);
                 setVisited(false);
+            }
     }
     
     return (
@@ -93,6 +102,7 @@ export default function RestaurantForm(props) {
             <label>
                 category:
                 <select value={category} onChange={event => handleCategory(event)}>
+                    <option defaultValue={category}>Select Category</option>
                     {props.categories.map(category => 
                         <option key={category} value={category}>{category}</option>
                     )}

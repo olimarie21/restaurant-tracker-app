@@ -9,7 +9,7 @@ const postRestaurant = (req, res) => {
 
     restaurant.save()
     .then(res => {
-        res.status(201).json(req.body);
+        res.status(201).json(res.body);
     })
     .catch(error=>res.status(500).send(error));
 }
