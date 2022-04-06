@@ -30,7 +30,7 @@ export default function RestaurantForm(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post('https://wmdd4936-ounderdah00.herokuapp.com/restaurants/', restaurant)
+        axios.post('https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants/', restaurant)
         .then(res => {
             console.log(res);
             setEmptyForm(true);
