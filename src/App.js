@@ -20,7 +20,7 @@ export default function App() {
     const categories = ["Thai", "Chinese", "Brazilian", "Japanese", "Mexican", "Cuban", "Korean", "American", "Fast food", "Vietnamese", "Vegan", "Vegetarian", "Indian", "Breakfast", "Other"];
     
     const getRestaurants = () => {
-        axios.get('http://localhost:8080/api/v1/restaurants/')
+        axios.get('https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants/')
         .then(results => {
             setRestaurants(results.data);
             setLoading(false);
@@ -32,13 +32,13 @@ export default function App() {
         let url;
 
         if(chosenCategory && happyHour === true) {
-            url = `http://localhost:8080/api/v1/restaurants/?type=${chosenCategory}&happyHour=${happyHour}`;
+            url = `https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants/?type=${chosenCategory}&happyHour=${happyHour}`;
         } else if(chosenCategory === "" && happyHour === true) {
-            url = `http://localhost:8080/api/v1/restaurants/?happyHour=true`;
+            url = `https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants/?happyHour=true`;
         } else if(chosenCategory != "" && happyHour === false) {
-            url = `http://localhost:8080/api/v1/restaurants/?type=${chosenCategory}`;
+            url = `https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants/?type=${chosenCategory}`;
         } else if(chosenCategory === "" && happyHour === false) {
-            url = 'http://localhost:8080/api/v1/restaurants';
+            url = 'https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants';
         } 
 
         axios.get(url)
@@ -50,7 +50,7 @@ export default function App() {
     }
 
     const searchRestaurants = (searchTerm) => {
-        axios.get(`http://localhost:8080/api/v1/search?term=${searchTerm}`)
+        axios.get(`https://wmdd4936-ounderdah00.herokuapp.com/api/v1/search?term=${searchTerm}`)
         .then(res => {
             console.log(res.data)
             setRestaurants(res.data);
@@ -112,7 +112,7 @@ export default function App() {
     const deleteRestaurant = (e, id) => {
         e.preventDefault();
 
-        axios.get(`http://localhost:8080/api/v1/restaurants/${id}`, {params: {_id: id}})
+        axios.get(`https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants/${id}`, {params: {_id: id}})
         .then(results => {
             console.log(results);
             getRestaurants();
