@@ -12,7 +12,8 @@ const connected = require('./db/connection.js');
 connected 
 .then(()=>{
     console.log("connected!");
-    app.listen(8080, ()=>console.log("Listening"));
+    const PORT = process.env.PORT || 8080;
+    app.listen(PORT, ()=>console.log(`Listening on ${PORT}`));
 });
 
 app.use(express.static('public'));
