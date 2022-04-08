@@ -1,14 +1,13 @@
+import axios from 'axios';
 import React, {useState, useRef} from 'react';
 import "./styles/filter.scss";
 
 export default function Filter(props) {
-    const [chosenCategory, setCategory] = useState(null);
+    const [chosenCategory, setCategory] = useState('');
     const [happyHour, setHappyHour] = useState(false);
     const filterRef = props.getRef;
-    const [categories, setCategories] = useState(props.categories);
 
-
-    const handleCategorySelect = (e, category) => {
+    const handleCategorySelect = (category) => {
         setCategory(category);
         console.log(chosenCategory);
     }
@@ -24,10 +23,10 @@ export default function Filter(props) {
             <div ref={filterRef} className='filterPopUp'>
                 <fieldset>
                     <legend>Food Category:</legend>
-                        {categories.map((category) => (
+                        {props.categories.map(category => (
                             <div className='category' key={category}>
                                 <label>
-                                    <input type='radio' name='category' value={category} onChange={(e)=>handleCategorySelect(e, category)}></input>
+                                    <input type='radio' name='category' value={category} onChange={()=>handleCategorySelect(category)}></input>
                                     {category}
                                 </label>
                             </div>

@@ -2,6 +2,7 @@
 const Ajv = require("ajv");
 const ajv = new Ajv({allErrors: true, coerceTypes: true, useDefaults: true});
 
+require("ajv-keywords")(ajv);
 require("ajv-formats")(ajv);
 require("ajv-errors")(ajv);
 
@@ -49,17 +50,8 @@ const ajvValidator = (req, res, next) => {
                 type: 'boolean'
             },
         },
-        required: ['restaurant', 'website', 'address', 'type', 'visited', 'happyHour'],
-        errorMessage: {
-            required: {
-                'restaurant': 'Please enter the name of the restaurant',
-                'website': 'Please enter the restaurants website.',
-                'address': 'Please enter the address of the restaurant.',
-                'type': 'Please choose a category from the drop-down menu.',
-                'visited': 'Please check the box if you have visited, or leave empty if not.',
-                'happyHour': 'Please check the box if the restaurant has a happy hour, or leave empty if not.'
-            }
-    }};
+        required: ['restaurant', 'website', 'address', 'type', 'dateAdded', 'visited', 'happyHour'],
+    }
     
     const validateSchema = ajv.compile(ajvSchema);
 
