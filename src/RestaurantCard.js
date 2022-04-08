@@ -5,6 +5,7 @@ import "./styles/restaurantCard.scss";
 import deleteBtn from './graphics/deleteBtn.svg';
 
 export default function RestaurantCard(props) {
+
     return (
         <div className='cardContainer'>
             <div className='restaurantCard' id={props.id}>
@@ -25,7 +26,7 @@ export default function RestaurantCard(props) {
                 </div>
                 <a className="location" href={`https://www.google.com/maps/place/${props.address}`}><img src={location}/></a>
             </div>
-            <img src={deleteBtn} className='delete'onClick={(e) => props.delete(e, props.id)}/>
+            <img src={deleteBtn} className='delete' onClick={(e) => props.delete(e, props.id)}/>
         </div>
     )
 };
