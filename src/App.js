@@ -3,9 +3,7 @@ import './styles/app.scss';
 import axios from 'axios';
 import RestaurantCard from './RestaurantCard';
 import RestaurantForm from './RestaurantForm';
-import headerRestaurant from './graphics/headerRestaurant.svg';
 import add from './graphics/add.svg';
-import filterIcon from './graphics/filterIcon.svg';
 import Filter from './Filter';
 import search from './graphics/search.svg';
 
