@@ -1,4 +1,5 @@
 const express = require("express"); 
+// const { response } = require("express");
 const app = express();
 const BodyParser = require("body-parser");
 const { queryParser } = require('express-query-parser');
@@ -17,7 +18,7 @@ connected
 });
 
 app.use(express.static('public'));
-app.use(BodyParser.json());
+app.use(express.json());
 app.use(BodyParser.urlencoded({extended:true}));
 app.use(
     queryParser({
@@ -29,7 +30,7 @@ app.use(
   )
 
 // import routes
-const router = require('./routes/restaurants'); 
+const router = require('./routes/routes.js'); 
 
 // API route
 app.use('/api/v1', router);

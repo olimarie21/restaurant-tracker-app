@@ -5,7 +5,7 @@ const {getRestaurants, postRestaurant, search, getSingleRestaurant} = require('.
 const {ajvValidator} = require('../controllers/restaurantAJV');
 
 router.get('/restaurants', getRestaurants); // get all restaurants
-router.post('/restaurants', postRestaurant, ajvValidator); // post new restaurant
+router.post('/restaurants', ajvValidator, postRestaurant); // post new restaurant
 router.get('/search', search);
 router.get('/restaurants/:id', getSingleRestaurant);
 
