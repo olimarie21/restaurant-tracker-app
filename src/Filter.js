@@ -1,21 +1,25 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import "./styles/filter.scss";
 
 export default function Filter(props) {
-    const [chosenCategory, setCategory] = useState(null);
+    const [chosenCategory, setCategory] = useState('');
     const [happyHour, setHappyHour] = useState(false);
     const filterRef = props.getRef;
-    const [categories, setCategories] = useState(props.categories);
 
-
-    const handleCategorySelect = (e, category) => {
+    const handleCategorySelect = (category) => {
         setCategory(category);
-        console.log(chosenCategory);
+        props.setRadioChecked(category);
     }
 
-    const handleHappyHour = () => {
-        setHappyHour(!happyHour);
-        console.log(happyHour);
+    const handleHappyHour = (e) => {
+        setHappyHour(e.target.checked ? true : false);
+        props.setChecked(e.target.checked ? true : false); 
+    }
+
+    const clearFilters = () => {
+        props.filterRestaurants("", false);
+        props.setChecked(false);
+        props.setRadioChecked(false);
     }
 
     return (
@@ -24,10 +28,10 @@ export default function Filter(props) {
             <div ref={filterRef} className='filterPopUp'>
                 <fieldset>
                     <legend>Food Category:</legend>
-                        {categories.map((category) => (
+                        {props.categories.map(category => (
                             <div className='category' key={category}>
                                 <label>
-                                    <input type='radio' name='category' value={category} onChange={(e)=>handleCategorySelect(e, category)}></input>
+                                    <input type='radio' name='category' value={category} checked={props.radioChecked === category} onChange={()=>handleCategorySelect(category)}></input>
                                     {category}
                                 </label>
                             </div>
@@ -35,11 +39,11 @@ export default function Filter(props) {
                 </fieldset>
                 <fieldset>
                     <legend>Happy hour?</legend>
-                    <input type='checkbox' name='happyHour' checked={happyHour} onChange={handleHappyHour}></input>
+                    <input type='checkbox' name='happyHour' checked={props.checked} onChange={e => handleHappyHour(e)}></input>
                 </fieldset>
                 <div className='filterButtons'>
                     <button onClick={(e) => props.filterRestaurants(chosenCategory, happyHour)}>apply</button>
-                    <button onClick={e => props.filterRestaurants("", false)}>clear</button>
+                    <button onClick={e => clearFilters(e)}>clear</button>
                 </div>
             </div>
         </div>

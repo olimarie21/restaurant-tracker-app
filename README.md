@@ -10,6 +10,7 @@
 - Restaurant tracker allows users to upload restaurants they have visisted, or want to visit, to create an accessible listing of local options. Each restaurant card provides a link to the restaurant's website and clickable hyperlink to get directions.
 
 **Features:**
+Features:
 - Typo tolerant MongoDB Atlas search
 - Category filteration
 - Interactivity with restaurant website links and links to directions from the UI
@@ -23,7 +24,7 @@
     - From here user's can use a text search or filter by category or happy hour availability
 
 # API Documentation:
-*- Endpoints:*
+- ***Endpoints:***
     - **api/v1/restaurants:** GET & POST Endpoint for users to access all restaurants and add additional restaurants
         - The required format for post requests is an object with the following properties:
             - {restaurant: 'string', website: 'string', address: 'string', category: 'string' (with enum values), visited: boolean, happyHour: boolean}
