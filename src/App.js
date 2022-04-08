@@ -3,9 +3,7 @@ import './styles/app.scss';
 import axios from 'axios';
 import RestaurantCard from './RestaurantCard';
 import RestaurantForm from './RestaurantForm';
-import headerRestaurant from './graphics/headerRestaurant.svg';
 import add from './graphics/add.svg';
-import filterIcon from './graphics/filterIcon.svg';
 import Filter from './Filter';
 import search from './graphics/search.svg';
 
@@ -16,6 +14,9 @@ export default function App() {
     const [addRestaurant, setAddRestaurant] = useState(false);
     const [filter, setShowFilter] = useState(false);
     const filterRef = useRef();
+    const [checked, setChecked] = useState(false);
+    const [radioChecked, setRadioChecked] = useState(false);
+    
 
     const categories = ["Thai", "Chinese", "Brazilian", "Japanese", "Mexican", "Cuban", "Korean", "American", "Fast food", "Vietnamese", "Vegan", "Vegetarian", "Indian", "Breakfast", "Other"];
     
@@ -150,7 +151,7 @@ export default function App() {
                     </div>
 
                     {filter ? (
-                        <Filter getRef={filterRef} categories={categories} filterRestaurants={filterRestaurants} />
+                        <Filter getRef={filterRef} categories={categories} radioChecked={radioChecked} setRadioChecked={setRadioChecked} setChecked={setChecked} filterRestaurants={filterRestaurants} checked={checked}/>
                     ) : null}
                     
                     {restaurants.length === 0 ? (
