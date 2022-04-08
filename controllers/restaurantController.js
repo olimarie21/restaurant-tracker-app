@@ -1,4 +1,5 @@
 // create middleware for routes
+const res = require('express/lib/response');
 const { ObjectId } = require('mongodb');
 const Restaurant = require('../models/restaurant');
 
@@ -8,10 +9,7 @@ const postRestaurant = (req, res) => {
 
     restaurant.save()
     .then(res => {
-        res.status(201).json({
-            data: restaurant,
-            message: 'success'
-        });
+        res.status(201).json(res.body);
     })
     .catch(error=>res.status(500).send(error));
 }
@@ -19,6 +17,7 @@ const postRestaurant = (req, res) => {
 // get all restaurants middleware
 const getRestaurants = (req, res) => {
     let searchParams = {};
+    console.log(req.query);
 
     if(req.query.restaurant) {
         searchParams = {
@@ -52,6 +51,7 @@ const getSingleRestaurant = (req, res) => {
     Restaurant.deleteOne({"_id":ObjectId(req.params.id)}).select({}).exec()
     .then(restaurant=>{
             res.status(200).json(restaurant);
+            console.log({restaurant});
             })
         .catch(error=>res.status(500).send(error));        
     }

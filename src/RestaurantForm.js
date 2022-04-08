@@ -10,35 +10,37 @@ export default function RestaurantForm(props) {
     const [address, setAddress] = useState("");
     const [visited, setVisited] = useState(false);
     const [happyHour, setHappyHour] = useState(false);
-    const [formError, setError] = useState(null);
+    const [formError, setError] = useState({restaurantErr: null, websiteErr: null, addressErr: null, typeErr: null});
+    const [emptyForm, setEmptyForm] = useState(false);
+
 
     const handleCategory = (event) => {
         setCategory(event.target.value)
     }
 
+    const restaurant = {
+        restaurant: name,
+        website: website,
+        address: address,
+        type: category,
+        visited: visited,
+        happyHour: happyHour
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const restaurant = {
-            restaurant: name,
-            website: website,
-            address: address,
-            type: category,
-            visited: visited,
-            happyHour: happyHour
-        };
-
-        axios.post('https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants', restaurant)
+        axios.post('https://wmdd4936-ounderdah00.herokuapp.com/api/v1/restaurants/', restaurant)
         .then(res => {
-            console.log(res.data);
-            props.getRestaurants(); // update listing
-            setError(null);
-            setName('');
-            setWebsite('');
-            setAddress('');
-            setCategory('');
-            setHappyHour(false);
-            setVisited(false);
+            console.log(res);
+            setEmptyForm(true);
+            setError({
+                restaurantErr: null,
+                websiteErr: null,
+                addressErr: null,
+                typeErr: null
+            });
+            props.showForm(false);
         })
         .catch(error => {
             if(error.response.data.errors) {
@@ -48,22 +50,25 @@ export default function RestaurantForm(props) {
                     addressErr: error.response.data.errors.address ? error.response.data.errors.address.message : null,
                     typeErr: error.response.data.errors.type ? error.response.data.errors.type.message : null
                 });
-            } else { 
-                setError(null);
-                props.getRestaurants();
+            } else { null };
+            console.log(error);
+        });
+        
+            props.getRestaurants(); // update listing
+            
+            // clear form
+            if(emptyForm === true) {
                 setName('');
                 setWebsite('');
                 setAddress('');
                 setCategory('');
                 setHappyHour(false);
                 setVisited(false);
-            };
-            console.log(error.response);
-        });
+            }
     }
     
     return (
-        <form className="addRestaurant" onSubmit={e=> handleSubmit(e)}>
+        <form className="addRestaurant" onSubmit={handleSubmit}>
             <label>
                 restaurant:
                 <input type="text" value={name} onChange={e => setName(e.target.value)}></input>
@@ -112,16 +117,16 @@ export default function RestaurantForm(props) {
             <div className='checkContainer'>
                 <label className='check'>
                     visited?
-                    <input name="visited" type="checkbox" value={visited} checked={visited} onChange={e => setVisited(e.target.checked ? true : false)}></input>
+                    <input name="visited" type="checkbox" value={visited} onChange={e => setVisited(e.target.value ? true : false)}></input>
                 </label>
 
                 <label className='check'>
                     happy hour?
-                    <input name='happyHour' type="checkbox" value={happyHour}  checked={happyHour} onChange={e => setHappyHour(e.target.value ? true : false)}></input>
+                    <input name='happyHour' type="checkbox" value={happyHour} onChange={e => setHappyHour(e.target.value ? true : false)}></input>
                 </label>
             </div>
 
-            <button type='submit'>add restaurant</button> 
+            <button>add restaurant</button> 
         </form>
     )
 };
