@@ -10,7 +10,6 @@
 - Restaurant tracker allows users to upload restaurants they have visisted, or want to visit, to create an accessible listing of local options. Each restaurant card provides a link to the restaurant's website and clickable hyperlink to get directions.
 
 **Features:**
-Features:
 - Typo tolerant MongoDB Atlas search
 - Category filteration
 - Interactivity with restaurant website links and links to directions from the UI
