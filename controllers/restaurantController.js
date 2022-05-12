@@ -1,5 +1,4 @@
 // create middleware for routes
-const res = require('express/lib/response');
 const { ObjectId } = require('mongodb');
 const Restaurant = require('../models/restaurant');
 
