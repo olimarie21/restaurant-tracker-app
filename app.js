@@ -1,4 +1,5 @@
 const express = require("express"); 
+const cors = require('cors');
 const app = express();
 const BodyParser = require("body-parser");
 const { queryParser } = require('express-query-parser');
@@ -16,6 +17,7 @@ connected
     app.listen(PORT, ()=>console.log(`Listening on ${PORT}`));
 });
 
+app.use(cors());
 app.use(express.static('public'));
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended:true}));
